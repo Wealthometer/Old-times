@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+        }
+
+        /* Fade In Animation */
+        .fade {
+            background-color: blue;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slide In Animation */
+        .slide {
+            background-color: green;
+            transform: translateX(-200px);
+            animation: slideIn 2s forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-200px); }
+            to { transform: translateX(0); }
+        }
+
+        /* Bounce Animation */
+        .bounce {
+            background-color: red;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* Rotate Animation */
+        .rotate {
+            background-color: purple;
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scaling Animation */
+        .scale {
+            background-color: orange;
+            animation: scale 3s infinite alternate;
+        }
+        @keyframes scale {
+            from { transform: scale(1); }
+            to { transform: scale(1.5); }
+        }
+
+        /* Color Change Animation */
+        .color-change {
+            background-color: pink;
+            animation: colorChange 3s infinite alternate;
+        }
+        @keyframes colorChange {
+            from { background-color: pink; }
+            to { background-color: yellow; }
+        }
+
+        /* Flip Animation */
+        .flip {
+            background-color: brown;
+            animation: flip 2s infinite;
+        }
+        @keyframes flip {
+            from { transform: rotateY(0); }
+            to { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="box fade">Fade In</div>
+    <div class="box slide">Slide In</div>
+    <div class="box bounce">Bounce</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box color-change">Color Change</div>
+    <div class="box flip">Flip</div>
+</body>
+</html>
