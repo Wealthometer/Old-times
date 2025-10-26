@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Starbucks Landing Page</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI' , sans-serif ;
+    background-color: #fff;
+    color: #333;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo{
+    height: 70px;
+    transform: translateX(-200px);
+    animation: slideIn 5s forwards;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3 ease-in-out;
+}
+
+nav a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #00704a;
+    transition: width 0.3 ease-in-out;
+}
+
+nav a :hover{
+    color: #00704a;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 40px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.text{
+    max-width: 500px;
+    flex: 1;
+}
+
+.text h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.text span{
+    color: #00704a;
+    font-size: larger;
+    font-weight:800;
+}
+
+.text p{
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: bold;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #00704a;
+    font-weight: 400;
+    color: #fff;
+    padding:10px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+.main-img{
+    flex: 1;
+    text-align: right;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00704a;
+    clip-path: circle(660px at right 820px);
+}
+
+.main-img img{
+    min-width: 300px;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.socials{
+    position: absolute;
+    right: 40px;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.socials a img{
+    transition: transform 0.3s ease;
+    width: 20px;
+}
+
+.socials a :hover img{
+    transform: scale(1.2);
+}
+
+.drinks{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* padding: 40px 20px; */
+}
+
+.drinks img{
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.drinks img:hover{
+    transform: scale(1.1) rotate(2deg);
+}
+
+@keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideIn{
+    from{transform: translateX(-200px);}
+    to {transform: translateX(0);}
+}
+
+@media (max-width:1024) {
+    .content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-img{
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .socials{
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:600px){
+    .text h1{
+        font-size: 2rem;
+    }
+
+    .main-img img{
+        max-width: 100%;
+    }
+
+    .drinks{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+<body> 
+    <header class="body">
+        <section class="circle"></section>
+        <img class="logo" src="/StarBuck Website/image/logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu/Cart/Contact</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <div class="text">
+            <h1>It's Not Just <br> Coffee <br> It's <span>StarBucks</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi delectus voluptatibus reiciendis officiis cumque explicabo iure dolorem reprehenderit earum magni nostrum odit provident deleniti hic omnis doloremque, et voluptas dolorum.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="main-img">
+            <img src="/StarBuck Website/image/coffee4.png" alt="StarBucks Original">
+        </div>
+
+        <div class="socials">
+            <a href="#"><img src="/COKE/images/facelogo.png" alt="facebook"></a>
+            <a href="#"><img src="/COKE/images/instalogo.png" alt="instagram"></a>
+            <a href="#"><img src="/COKE/images/twitlogo.png" alt="twitter"></a>
+        </div>
+    </section>
+
+    <div class="drinks">
+        <img src="/StarBuck Website/image/coffee4.png" alt="StarBucks Original"  class="rows" onclick="img('./images/coffee4');changecirclecolor('##00704a')">
+        <img src="./images/coffee2.png" alt="pink" class="rows" onclick="img('./images/redCoke.png');changecirclecolor('#110101')">
+        <img src="./images/coffee3.png" alt="strawberry">
+    </div>
+</body>
+    <script>
+    function img(anything) {
+        document.querySelector('.imagess').src = anything;
+    }
+    function changecirclecolor(color){
+        const circle = document.querySelector('body');
+        circle.style.background = color;
+    }
+    </script>
+</html>
