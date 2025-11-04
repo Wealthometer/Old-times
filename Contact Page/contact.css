@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.h2 {
+    font-family: 'Lobster';
+    font-size: 9rem;
+}
+
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #222;
+}
+
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-family: 'Lobster';
+    font-size: 2em;
+    color: aliceblue;
+    font-weight: 600;
+}
+
+.contact .content p {
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.container .contactinfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contactinfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.container .contactinfo .box .icon {
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background: repeating-conic-gradient(from 27.5deg, #01bdc2 0%,#01bdc2 10%,transparent 10%,transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .contactinfo .box .icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from 117.5deg, #01bdc2 0%,#01bdc2 10%,transparent 10%,transparent 50%);
+}
+
+.container .contactinfo .box .icon::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background-color: #222;
+}
+
+.container .contactinfo .box .icon b {
+    position: absolute;
+    inset: 8px;
+    background-color: #01bdc2;
+    z-index: 2;
+}
+
+.container .contactinfo .box .icon i {
+    position: relative;
+    z-index: 1000;
+    font-size: 1.5em;
+}
+
+.container .contactinfo .box .text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    font-size: 1.3em;
+    color: aliceblue;
+    font-family: "satisfy";
+    font-weight: 500;
+}
+
+.container .contactinfo .box .text h3 {
+    color: #01bdc2;
+}
+
+.container .contactinfo .txt {
+    color: aliceblue;
+    margin-top: 50px;
+    font-weight: 500;
+    border-left: 40px solid #01bdc2;
+    padding-left: 10px;
+    line-height: 1em;
+}
+
+.container .contactinfo .sci {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.container .contactinfo .sci li {
+    list-style: none;
+}
+
+.container .contactinfo .sci li a {
+    color: aliceblue;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+.container .contactinfo .sci li a:hover {
+    color: #01bdc2;
+    filter: drop-shadow(0 0 5px #63bbbe);
+}
+
+.h22,span {
+    font-family: 'Satisfy';
+}
+
+.container .contactform {
+    position: relative;
+    width: 40%;
+    background: repeating-conic-gradient(from var(--a),#01bdc2 0%,#01bdc2 10%,transparent 10%,transparent 50%);
+    animation: animate 6s linear infinite;
+    padding: 60px;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate {
+    0% {
+        --a :0deg;
+    }
+    
+    100% {
+        --a:360deg;
+    }
+}
+
+.container .contactform::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a),#01bdc2 0%,#01bdc2 10%,transparent 10%,transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+    border-radius:10px;
+}
+
+.container .contactform::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 20px solid #222;
+    background: #333;  
+    border-radius: 10px; 
+}
+
+.container .contactform form {
+    position: relative;
+    z-index: 10;
+}
+
+.container .contactform form h2 {
+    font-size: 2em;
+    color: aliceblue;
+}
+
+.container .contactform form .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container .contactform form .inputBox input,.container .contactform form .inputBox textarea  {
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 1.1em;
+    margin-top: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #01bdc2;
+    color: aliceblue;
+    outline: none;resize: none;
+}
+
+.container .contactform form .inputBox span {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    pointer-events: none;
+    font-size: 1.10em;
+    color: aliceblue;
+    transition: 0.91s;   
+}
+
+.top {
+    position: absolute;
+    left: 0;
+    bottom:49px;
+    top: 0;
+}
+
+textarea {
+    margin-top: 23px;
+}
+
+.container .contactform form .inputBox input:focus ~ span,
+.container .contactform form .inputBox textarea:focus ~ span,
+.container .contactform form .inputBox input:valid ~ span,
+.container .contactform form .inputBox textarea:valid ~ span  {
+    color: #01bdc2;    
+    font-size: 0.9em;
+    transform: translateY(-9px);
+}
+
+.container .contactform form .inputBox input[type="submit"] {
+    width: 100%;
+    background: #01bdc2;
+    color: #222;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: "Tangerine";
+    font-size: xx-large;
+    
+}
