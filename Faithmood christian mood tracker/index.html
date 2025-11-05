@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaithMood - Christian Mood Tracker & Encourager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-dove"></i>
+                <h1>FaithMood</h1>
+            </div>
+            <div class="theme-controls">
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="historyBtn" class="history-btn">
+                    <i class="fas fa-history"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="mood-selection" id="moodSelection">
+                <h2>How are you feeling today?</h2>
+                <p class="subtitle">Choose your current mood and receive God's encouragement</p>
+                
+                <div class="mood-grid">
+                    <button class="mood-btn" data-mood="joyful">
+                        <span class="mood-emoji">😊</span>
+                        <span class="mood-label">Joyful</span>
+                    </button>
+                    <button class="mood-btn" data-mood="anxious">
+                        <span class="mood-emoji">😰</span>
+                        <span class="mood-label">Anxious</span>
+                    </button>
+                    <button class="mood-btn" data-mood="sad">
+                        <span class="mood-emoji">😢</span>
+                        <span class="mood-label">Sad</span>
+                    </button>
+                    <button class="mood-btn" data-mood="tired">
+                        <span class="mood-emoji">😴</span>
+                        <span class="mood-label">Tired</span>
+                    </button>
+                    <button class="mood-btn" data-mood="grateful">
+                        <span class="mood-emoji">🙏</span>
+                        <span class="mood-label">Grateful</span>
+                    </button>
+                    <button class="mood-btn" data-mood="broken">
+                        <span class="mood-emoji">💔</span>
+                        <span class="mood-label">Broken</span>
+                    </button>
+                    <button class="mood-btn" data-mood="peaceful">
+                        <span class="mood-emoji">☮️</span>
+                        <span class="mood-label">Peaceful</span>
+                    </button>
+                    <button class="mood-btn" data-mood="confused">
+                        <span class="mood-emoji">😕</span>
+                        <span class="mood-label">Confused</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="encouragement-display" id="encouragementDisplay" style="display: none;">
+                <div class="encouragement-card">
+                    <div class="card-header">
+                        <h3 id="selectedMood"></h3>
+                        <button id="backBtn" class="back-btn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="verse-section">
+                        <h4>God's Word for You:</h4>
+                        <blockquote id="bibleVerse"></blockquote>
+                        <cite id="verseReference"></cite>
+                    </div>
+                    
+                    <div class="quote-section">
+                        <h4>Encouragement:</h4>
+                        <p id="encouragingQuote"></p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="newVerseBtn" class="action-btn">
+                            <i class="fas fa-refresh"></i>
+                            New Verse
+                        </button>
+                        <button id="saveBtn" class="action-btn">
+                            <i class="fas fa-heart"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="modal" id="historyModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Your Faith Journey</h3>
+                    <button id="closeModal" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="historyContent">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="background-overlay" id="backgroundOverlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
